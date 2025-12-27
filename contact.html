@@ -68,8 +68,12 @@
                     <!-- needs to be changed -->
                     <div
                         class="bg-white rounded-2xl shadow-lg border border-slate-100 p-8 animate-on-scroll slide-up delay-100">
+                        <!-- Status Message Container -->
+                        <div id="form-status"></div>
+
                         <!-- [DEPLOYMENT CONFIG] Update 'action' with your actual Formspree ID or backend URL -->
-                        <form action="https://formspree.io/f/mqkrabcd" method="POST" class="space-y-6">
+                        <form id="contact-form" action="https://formspree.io/f/xeeqgkdj" method="POST"
+                            class="space-y-6">
                             <!-- Email subject for your inbox -->
                             <input type="hidden" name="_subject" value="New Contact Form Submission | College Mil Gaya">
 
@@ -82,6 +86,13 @@
                             <div>
                                 <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
                                 <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-slate-700 mb-1">Phone
+                                    Number</label>
+                                <input type="tel" id="phone" name="phone"
                                     class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
                             </div>
 
@@ -105,14 +116,14 @@
                             </div>
 
                             <button type="submit"
-                                class="w-full py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition-all">
+                                class="w-full py-3 bg-blue-900 text-white font-bold rounded-lg hover:bg-blue-800 transition-all">
                                 Send Message
                             </button>
                         </form>
-
                     </div>
                 </div>
             </div>
+            <script src="assets/js/contact-form.js"></script>
         </section>
     </main>
 
