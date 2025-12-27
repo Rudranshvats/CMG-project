@@ -191,18 +191,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // DYNAMIC LOGO LOGIC FOR CMG TUTOR
-    // Check if we are on the CMG Tutor page
-    const currentPath = window.location.pathname;
-    if (currentPath.includes('my-tutor.html')) {
-        const logoContainer = document.getElementById('navbar-logo-container');
-        if (logoContainer) {
-            // Replace default logo html with specific image logic
-            logoContainer.innerHTML = `
-                <a href="index.html" class="flex items-center gap-2 group">
-                    <img src="${CMG_TUTOR_LOGO_URL}" alt="CMG Tutor" class="h-8 w-auto object-contain">
-                </a>
-            `;
-        }
-    }
 });
