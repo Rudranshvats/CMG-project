@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- 
+    PAGE: Contact Us (contact.html)
+    PURPOSE: User inquiries and support requests.
+    PRIMARY CTA: "Send Message" (Form Submission)
+    INTERACTIVE FEATURES: Contact Form (requires Formspree or similar backend)
+    DEPLOYMENT NOTE: Update form 'action' attribute with live endpoint ID.
+-->
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | College Mil Gaya</title>
+    <meta name="description"
+        content="Get in touch for counselling, product support, or general inquiries. We are here to help.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen">
+    <div id="navbar-placeholder"></div>
+
+    <main class="flex-grow">
+        <section class="py-20 lg:py-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-2xl mx-auto text-center mb-16 animate-on-scroll slide-up">
+                    <h1 class="text-4xl font-bold text-slate-900 mb-4">Start the Conversation</h1>
+                    <p class="text-lg text-slate-600">Whether you need help with a product or life advice, we're
+                        listening.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+                    <!-- Contact Info -->
+                    <div class="space-y-8 animate-on-scroll slide-up">
+                        <div class="bg-slate-50 p-8 rounded-2xl">
+                            <h3 class="text-xl font-bold text-slate-900 mb-4">Quick Connect</h3>
+                            <a href="tel:+919876543210"
+                                class="flex items-center text-slate-600 hover:text-blue-600 mb-4 transition-colors">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
+                                    </path>
+                                </svg>
+                                +91 99586 41842
+                            </a>
+                            <a href="mailto:hello@collegemilgaya.com"
+                                class="flex items-center text-slate-600 hover:text-blue-600 transition-colors">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                    </path>
+                                </svg>
+                                collegemilgaya@gmail.com
+                            </a>
+                        </div>
+
+                        <div class="bg-blue-50 p-8 rounded-2xl border border-blue-100">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Need immediate clarity?</h3>
+                            <p class="text-slate-600 text-sm mb-4">Our counsellors are often booked, but drop us a
+                                message and we'll prioritize your request.</p>
+                            <a href="#" class="font-semibold text-blue-600 hover:text-blue-800">Check Waitlist Status
+                                &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div
+                        class="bg-white rounded-2xl shadow-lg border border-slate-100 p-8 animate-on-scroll slide-up delay-100">
+                        <!-- [DEPLOYMENT CONFIG] Update 'action' with your actual Formspree ID or backend URL -->
+                        <form action="https://formspree.io/f/mqkrabcd" method="POST" class="space-y-6">
+                            <!-- Email subject for your inbox -->
+                            <input type="hidden" name="_subject" value="New Contact Form Submission | College Mil Gaya">
+
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required
+                                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all">
+                            </div>
+
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-slate-700 mb-1">I'm
+                                    interested in...</label>
+                                <select id="subject" name="subject"
+                                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white">
+                                    <option value="MY Tutor">MY Tutor Product</option>
+                                    <option value="Counselling">Counselling (My Mentor)</option>
+                                    <option value="College Guidance">College Guidance</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message"
+                                    class="block text-sm font-medium text-slate-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"></textarea>
+                            </div>
+
+                            <button type="submit"
+                                class="w-full py-3 bg-slate-900 text-white font-bold rounded-lg hover:bg-slate-800 transition-all">
+                                Send Message
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!-- 
+    PAGE: Home (index.html)
+    PURPOSE: Landing page, brand overview, and gateway to product/service pages.
+    PRIMARY CTA: "Buy CMG Tutor" and "Join Counselling Waitlist"
+    INTERACTIVE FEATURES: Rotating Hero Section (hero.js), Toggleable Info Sections (toggles.js)
+    DEPLOYMENT NOTE: Ensure all assets are in assets/ folder.
+-->
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Mil Gaya | Clarity, Confidence, & Success</title>
+    <meta name="description"
+        content="Empowering students and parents with AI-powered tutoring, professional counselling, and clear college guidance.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body class="bg-white text-slate-800 antialiased flex flex-col min-h-screen">
+
+    <div id="navbar-placeholder"></div>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative bg-slate-50 overflow-hidden pt-20 pb-28 lg:pt-32 lg:pb-40">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div id="hero-container" class="transition-all duration-500 transform">
+                    <h1 id="hero-title"
+                        class="text-4xl md:text-6xl font-extrabold text-blue-900 tracking-tight mb-6 leading-tight">
+                        Master Your Exams with <span class="text-blue-600">CMG Tutor</span>
+                    </h1>
+                    <p id="hero-subtitle" class="mt-4 max-w-2xl mx-auto text-xl text-slate-600 mb-10">
+                        AI-powered learning that adapts to you. Clear concepts, unlimited practice, and zero stress.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                        <a id="hero-primary-cta" href="my-tutor.html"
+                            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-200 bg-blue-900 rounded-full hover:bg-blue-800 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+                            Buy CMG Tutor
+                        </a>
+                        <a href="contact.html"
+                            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-slate-700 transition-all duration-200 bg-white border border-slate-200 rounded-full hover:bg-slate-50 hover:text-blue-900 hover:border-slate-300 shadow-sm hover:shadow-md">
+                            Join Counselling Waitlist
+                        </a>
+                    </div>
+
+                    <!-- Hero Controls -->
+                    <div class="mt-12 flex justify-center items-center gap-4 text-slate-400">
+                        <button onclick="window.heroPrev()" class="p-2 hover:text-blue-600 transition-colors"
+                            aria-label="Previous Slide">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button onclick="window.heroToggle()" class="p-2 hover:text-blue-600 transition-colors"
+                            aria-label="Play/Pause">
+                            <svg id="hero-play-pause-icon" class="w-6 h-6" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                        <button onclick="window.heroNext()" class="p-2 hover:text-blue-600 transition-colors"
+                            aria-label="Next Slide">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abstract Background Shapes -->
+            <div
+                class="absolute top-0 left-0 -ml-20 -mt-20 w-80 h-80 rounded-full bg-blue-50 blur-3xl opacity-50 pointer-events-none">
+            </div>
+            <div
+                class="absolute bottom-0 right-0 -mr-20 -mb-20 w-80 h-80 rounded-full bg-sky-50 blur-3xl opacity-50 pointer-events-none">
+            </div>
+        </section>
+
+        <!-- What We Do (3 Pillars) -->
+        <section class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-8">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl font-bold text-blue-900 mb-2">Complete Educational Support</h2>
+                        <p class="text-lg text-slate-600">We don't just teach. We guide.</p>
+                    </div>
+                    <button id="btn-pillars" onclick="toggleSection('pillars-content', 'btn-pillars')"
+                        class="text-blue-600 font-semibold flex items-center hover:text-blue-800 transition-colors">
+                        Hide <svg class="w-4 h-4 ml-1 transform rotate-180 toggle-icon" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="pillars-content" class="section-content grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- CMG Tutor -->
+                    <div
+                        class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 border border-slate-100 animate-on-scroll slide-up delay-100">
+                        <div
+                            class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-3">CMG Tutor</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            AI-powered personalized learning for Class 1–12. Concept clarity, infinite practice, and
+                            instant doubt solving.
+                        </p>
+                        <a href="my-tutor.html"
+                            class="text-blue-600 font-semibold hover:text-blue-700 flex items-center">
+                            Learn more <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- CMG Mentor -->
+                    <div
+                        class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 border border-slate-100 animate-on-scroll slide-up delay-200">
+                        <div
+                            class="w-14 h-14 bg-emerald-100 rounded-xl flex items-center justify-center text-emerald-600 mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-3">CMG Mentor</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Professional counselling for emotional well-being using the "College Mil Gaya" approach. For
+                            parents & students.
+                        </p>
+                        <a href="my-mentor.html"
+                            class="text-emerald-600 font-semibold hover:text-emerald-700 flex items-center">
+                            Join Waitlist <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- CMG College -->
+                    <div
+                        class="bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition-shadow duration-300 border border-slate-100 animate-on-scroll slide-up delay-300">
+                        <div
+                            class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center text-indigo-600 mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-900 mb-3">CMG College</h3>
+                        <p class="text-slate-600 mb-6 leading-relaxed">
+                            Strategic guidance for Class 9–12. Stream selection, exam planning, and college application
+                            support.
+                        </p>
+                        <a href="my-college.html"
+                            class="text-indigo-600 font-semibold hover:text-indigo-700 flex items-center">
+                            Explore <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who It's For -->
+        <section class="py-20 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-end mb-8">
+                    <h2 class="text-3xl font-bold text-blue-900">Built for Families</h2>
+                    <button id="btn-who" onclick="toggleSection('who-content', 'btn-who')"
+                        class="text-blue-600 font-semibold flex items-center hover:text-blue-800 transition-colors">
+                        Hide <svg class="w-4 h-4 ml-1 transform rotate-180 toggle-icon" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div id="who-content" class="section-content grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="animate-on-scroll slide-up">
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full border-2 border-blue-900 text-blue-900 mt-1">
+                                    <span class="text-xs font-bold">1</span>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-blue-900">For Students</h4>
+                                    <p class="text-slate-600 text-sm mt-1">No more fear of missing out. Get clear,
+                                        structured learning and guidance.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full border-2 border-blue-900 text-blue-900 mt-1">
+                                    <span class="text-xs font-bold">2</span>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-blue-900">For Parents</h4>
+                                    <p class="text-slate-600 text-sm mt-1">Relief from the "best parent" pressure.
+                                        Practical tools to help your child thrive.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div
+                                    class="flex-shrink-0 h-6 w-6 flex items-center justify-center rounded-full border-2 border-blue-900 text-blue-900 mt-1">
+                                    <span class="text-xs font-bold">3</span>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-semibold text-blue-900">For Institutes</h4>
+                                    <p class="text-slate-600 text-sm mt-1">Empower your teachers with AI assistant tools
+                                        and student counselling pilots.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative animate-on-scroll fade-in">
+                        <div
+                            class="aspect-w-4 aspect-h-3 rounded-2xl bg-sky-50 overflow-hidden shadow-lg border border-sky-100">
+                            <div class="w-full h-full flex items-center justify-center text-sky-200">
+                                <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                        d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z">
+                                    </path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why CMG -->
+        <section class="py-24 bg-blue-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-on-scroll slide-up">
+                <h2 class="text-3xl font-bold mb-12">Why College Mil Gaya?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    <div class="text-center">
+                        <div class="text-sky-400 text-4xl mb-4 font-bold">01</div>
+                        <h3 class="text-xl font-semibold mb-2">Clarity Over Hype</h3>
+                        <p class="text-slate-300 leading-relaxed text-sm">We don't promise miracles. We provide the
+                            systems, tools, and support to build real success.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-sky-400 text-4xl mb-4 font-bold">02</div>
+                        <h3 class="text-xl font-semibold mb-2">Product First</h3>
+                        <p class="text-slate-300 leading-relaxed text-sm">Our AI tutor and resources are built to work
+                            immediately. No long onboarding, just results.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-sky-400 text-4xl mb-4 font-bold">03</div>
+                        <h3 class="text-xl font-semibold mb-2">Whole-Human Approach</h3>
+                        <p class="text-slate-300 leading-relaxed text-sm">Success isn't just grades. It's mental
+                            well-being and clear decision making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Strip -->
+        <section class="py-20 bg-sky-500">
+            <div class="max-w-4xl mx-auto px-4 text-center text-white animate-on-scroll fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to find your path?</h2>
+                <p class="text-white/90 text-lg mb-10">Start with clear learning or professional guidance today.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
+                    <a href="my-tutor.html"
+                        class="px-8 py-4 bg-white text-blue-900 font-bold rounded-full shadow-lg hover:bg-slate-50 transition-all hover:-translate-y-1">Buy
+                        CMG Tutor</a>
+                    <a href="contact.html"
+                        class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white/10 transition-all">Join
+                        Counselling Waitlist</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/hero.js"></script>
+    <script src="assets/js/toggles.js"></script>
+</body>
+
+</html>
