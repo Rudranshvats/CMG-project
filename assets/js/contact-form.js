@@ -3,11 +3,11 @@
  * Handles AJAX submission to Formspree
  */
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contact-form');
-    const statusDiv = document.getElementById('form-status');
+function setupAjaxForm(formId, statusId) {
+    const form = document.getElementById(formId);
+    const statusDiv = document.getElementById(statusId);
 
-    if (!form) return;
+    if (!form || !statusDiv) return;
 
     form.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 statusDiv.innerHTML = `
                     <div class="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6 flex items-center animate-fade-in">
                         <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <span>Thanks! Your message has been sent successfully.</span>
+                        <span>Thanks! Your Response has been recorded. We will get back to you soon.</span>
                     </div>
                 `;
                 form.reset();
@@ -68,4 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
             statusDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
     });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    setupAjaxForm('contact-form', 'form-status');
+    setupAjaxForm('waitlist-form', 'waitlist-status');
 });
